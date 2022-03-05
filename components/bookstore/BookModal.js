@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const BookModal = ({ close, title, author, img, price, review, desc, src }) => {
   const closeModal = () => {
     close(false);
@@ -12,7 +10,7 @@ const BookModal = ({ close, title, author, img, price, review, desc, src }) => {
         <button id="close-modal" onClick={closeModal}>
           Close
         </button>
-        <Image className="modal-img" src={img} alt="bookimg" />
+        <img className="modal-img" src={img} alt="bookimg" />
         <div className="right">
           <h1>{title}</h1>
           <p>Author: {author}</p>

@@ -4,13 +4,361 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #524a4e;
+  font-family: monospace;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
 a {
   color: inherit;
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fdc1df;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ff5c8d75;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/*----------navbar------------*/
+#Logo {
+  color: #524a4e;
+}
+nav {
+  background-color: #fdeff4;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  padding: 0px;
+}
+li {
+  color: #524a4e;
+  padding: 10px;
+  font-size: 20px;
+}
+.navlinks {
+  margin: 0 5px;
+}
+#whishlistBtn {
+  border: none;
+  background-color: #ff5c8d;
+  transition: 0.5s;
+}
+#whishlistBtn:hover {
+  background-color: #ffc0d3;
+}
+/*-------------------------------------------*/
+
+/*---------------------view----------------------*/
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main h1 {
+  margin: 40px;
+  color: #fdeff4;
+}
+/*-------------------------------------------*/
+
+/*-------------------bookslist------------------------*/
+.Books-list {
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 30px 0px;
+  justify-items: center;
+}
+/*-------------------------------------------*/
+
+/*--------------bookcard-------------------*/
+.BookCard {
+  width: 350px;
+  height: 500px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px 2px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.BookCard:hover {
+  box-shadow: 0 0 20px 5px #ffc0d3;
+}
+.Book-cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.BookCard-cover {
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.692);
+  width: 100%;
+  height: 250px;
+  align-self: flex-end;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fdeff4;
+  transition: 0.4s;
+  overflow: hidden;
+}
+.BookCard-cover p {
+  margin: 10px;
+}
+.BookCard-cover:hover {
+  height: 400px;
+}
+.Btns {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 10px;
+}
+.Btns-one {
+  display: block;
+  padding: 5px;
+  border: none;
+  background-color: #ffffff;
+  transition: 0.5s;
+  color: #000000;
+  font-family: monospace;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100px;
+}
+.Btns-one:nth-child(2) {
+  background-color: #ff5c8d;
+}
+.Btns-one:hover {
+  transform: scale(1.1);
+}
+
+/*-------------------------------------------*/
+
+/*--------------bookmodal-------------------*/
+.book-modal {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background-color: #00000071;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.book-box {
+  background-color: #fdeff4;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 20px 1px;
+  position: relative;
+}
+#close-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  padding: 10px;
+  border: none;
+  background-color: #ffffff;
+  transition: 0.5s;
+  color: #000000;
+  font-family: monospace;
+  font-size: 14px;
+  cursor: pointer;
+}
+#close-modal:hover {
+  background-color: red;
+  color: white;
+}
+.modal-img {
+  margin: 100px;
+  border: 3px solid #524a4e;
+}
+.right {
+  background-color: #ff5c8d;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px;
+  overflow-y: scroll;
+  width: 80%;
+}
+.right h1 {
+  margin: 20px 0px;
+  color: black;
+  font-size: 30px;
+}
+.right p,
+.booklink {
+  margin: 5px 0px;
+}
+.right h4 {
+  margin-top: 20px;
+  font-size: 16px;
+}
+#desc {
+  margin: 20px 0px;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  background-color: #fdc1df;
+}
+
+/*--------------------wishlist-----------------------*/
+.wishlist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wishlist h1 {
+  color: white;
+  padding: 20px;
+  margin: 20px;
+}
+.buy {
+  display: block;
+  padding: 5px;
+  border: none;
+  background-color: #ffc400;
+  transition: 0.5s;
+  color: #000000;
+  font-size: 20px;
+  font-family: monospace;
+  cursor: pointer;
+  width: 100px;
+}
+.buy:hover {
+  transform: scale(1.1);
+}
+.remove {
+  display: block;
+  padding: 5px;
+  border: none;
+  background-color: #aaaaaae7;
+  transition: 0.5s;
+  color: #000000;
+  font-size: 20px;
+  font-family: monospace;
+  cursor: pointer;
+  width: 100px;
+}
+.remove:hover {
+  transform: scale(1.1);
+}
+
+.scrolltotop {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  padding: 5px;
+  margin: 5px;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.spinner {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border-top: 10px solid rgb(255, 255, 255);
+  animation: example 2s infinite;
+}
+@keyframes example {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    border-top: 10px solid rgb(0, 0, 0);
+  }
+}
+@media only screen and (max-width: 1210px) {
+  .Books-list {
+    width: 100%;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(286px, 2fr));
+    grid-gap: 10px 0px;
+    justify-items: center;
+  }
+  .BookCard {
+    width: 250px;
+    height: 400px;
+    margin: 10px;
+  }
+  .book-box {
+    background-color: #fdeff4;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-img {
+    width: 100px;
+    margin: 50px 20px;
+    border: 3px solid #524a4e;
+  }
+  .right {
+    background-color: #ff5c8d;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    overflow-y: scroll;
+    width: auto;
+  }
+  #desc {
+    margin: 20px 0px;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: #fdc1df;
+  }
 }

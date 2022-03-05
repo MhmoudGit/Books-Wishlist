@@ -23,6 +23,7 @@ const BookModal = ({ close, title, author, img, price, review, desc, src }) => {
               "https://www.amazon.co.uk/gp/browse.html?node=266239&ref_=nav_em__bo_books_0_2_9_2"
             }
             target="_blank"
+            rel="noreferrer"
           >
             Source: {src}
           </a>

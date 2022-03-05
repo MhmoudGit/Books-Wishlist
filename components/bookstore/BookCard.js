@@ -2,6 +2,7 @@ import { useContext } from "react";
 import BookModal from "./BookModal";
 import { ProductsContext } from "../layout/context";
 import useModal from "../hooks/usemodal";
+import Image from "next/image";
 
 const BookCard = ({ title, author, img, price, review, desc, src }) => {
   const { modal, openModal, setModal } = useModal()
@@ -24,7 +25,7 @@ const BookCard = ({ title, author, img, price, review, desc, src }) => {
 
   return (
     <div className="BookCard">
-      <img className="Book-cover" src={img} alt="bookcover" />
+      <Image className="Book-cover" src={img} alt="bookcover" />
       <div className="BookCard-cover">
         <h2>{title}</h2>
         <p>{author}</p>

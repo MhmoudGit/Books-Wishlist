@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useContext } from "react";
 import { ProductsContext } from "../layout/context";
 
@@ -10,7 +11,7 @@ const WishlistCard = ({ title, author, img }) => {
 
     return ( 
 <div className="BookCard">
-      <img className="Book-cover" src={img} alt="bookcover" />
+      <Image className="Book-cover" src={img} alt="bookcover" />
       <div className="BookCard-cover">
         <h2>{title}</h2>
         <p>{author}</p>
